@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam and Thermal Camera Feed</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%;  /* Adjust width to make it larger */
+            height: 80%; /* Adjust height to make it larger */
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%; /* Make image fill the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <h2>Webcam Feed</h2>
+        <img src="{{ url_for('webcam_feed') }}" alt="Webcam Feed">
+    </div>
+    <div class="video-container">
+        <h2>Thermal Camera Feed</h2>
+        <img src="{{ url_for('thermal_feed') }}" alt="Thermal Camera Feed">
+    </div>
+</body>
+</html>
